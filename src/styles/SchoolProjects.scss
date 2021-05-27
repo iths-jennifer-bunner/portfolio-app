@@ -1,0 +1,63 @@
+@import "../App.scss";
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  &__outerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // width: 26rem;
+    height: 40rem;
+    background-color: $beige;
+    margin: 2rem 0;
+    padding: 0 2rem;
+    border-radius: 5px;
+  }
+  &__imageContainer {
+    height: 20rem;
+    width: auto;
+    display: flex;
+    // border-radius: 5px;
+    transform: translateY(-15%);
+  }
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+@include md {
+  // .container {
+  //   justify-content: center;
+  // }
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__outerContainer {
+      height: 50rem;
+      // width: 40rem;
+      margin: 5rem 0;
+    }
+    &__imageContainer {
+      height: 25rem;
+      width: auto;
+    }
+  }
+}
+@include lg {
+  .cards {
+    &__outerContainer {
+      width: 45rem;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@import "../App.scss";
+
+// canvas {
+//   position: fixed;
+//   touch-action: none;
+//   top: 0;
+//   left: 0;
+//   fill: $beige;
+//   z-index: -1;
+//   animation: move 13s infinite;
+//   transform-origin: 50% 50%;
+// }
+canvas {
+  position: fixed;
+  touch-action: none;
+}
+
+.blobBody {
+  margin: 0;
+  padding: 0;
+  // width: 100vw;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  background: $pink;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: -1;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 4rem;
+  height: 100vh;
+  width: 100vw;
+
+  @include md {
+    padding-left: 10rem;
+  }
+}
+// align-content: flex-start;
+// padding-left: 100px;
+
+.header {
+  color: black;
+  font-style: normal;
+  z-index: 1;
+
+  &__title {
+    font-size: 64px;
+    line-height: 96px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-family: $poppins;
+  }
+  &__secondTitle {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-family: $poppins;
+    align-self: flex-start;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1) translate(10px, -90px);
+  }
+  38% {
+    transform: scale(1) translate(50vw, 30vh);
+  }
+  40% {
+    transform: scale(1) translate(50vw, 30vh);
+  }
+  78% {
+    transform: scale(1) translate(-20vw, 30vh);
+  }
+  80% {
+    transform: scale(1) translate(-20vw, 30vh);
+  }
+  100% {
+    transform: scale(1) translate(10px, -90px);
+  }
+}
+
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #f2bc79;
+  width: 50vmax;
+  z-index: -1;
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+}
+
+// @keyframes move {
+//   0% {
+//     transform: scale(1) translate(10px, -90px);
+//   }
+//   38% {
+//     transform: scale(1) translate(50vw, 30vh);
+//   }
+//   40% {
+//     transform: scale(1) translate(50vw, 30vh);
+//   }
+//   78% {
+//     transform: scale(1) translate(-20vw, 30vh);
+//   }
+//   80% {
+//     transform: scale(1) translate(-20vw, 30vh);
+//   }
+//   100% {
+//     transform: scale(1) translate(10px, -90px);
+//   }
+// }

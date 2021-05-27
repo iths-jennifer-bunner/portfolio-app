@@ -1,0 +1,44 @@
+@import "../App.scss";
+
+.footer {
+  background-color: $beige;
+  padding: 2rem 1rem;
+  margin-top: 5rem;
+  display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__leftDiv,
+  &__rightDiv {
+    padding: 2rem 1rem;
+  }
+  &__leftDiv {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__icon {
+    // display: block;
+    padding: 1rem 0;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+@include md {
+  .footer {
+    padding: 2rem 15rem;
+    &__icon {
+      font-size: 3rem;
+      flex-direction: row;
+      margin: 0 1rem;
+    }
+    &__rightDiv {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

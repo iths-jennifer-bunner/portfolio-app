@@ -1,0 +1,25 @@
+@import "../App.scss";
+
+.knowledge {
+  &__container p {
+    // max-width: 60rem;
+    margin: 2rem 0;
+  }
+}
+
+@include md {
+  .knowledge {
+    // width: 60rem;
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__container p {
+      max-width: 60rem;
+      margin: 1rem 0;
+    }
+  }
+}

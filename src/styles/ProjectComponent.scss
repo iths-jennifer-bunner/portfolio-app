@@ -1,0 +1,52 @@
+@import "../App.scss";
+
+.wrapper {
+  margin-top: 0 !important;
+  //to avoid whitespace on mobile beige background
+  // position: relative;
+  // top: -20rem;
+}
+.projects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0;
+
+  p {
+    max-width: 60rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &__imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 22rem;
+    width: auto;
+    padding: 2rem 2rem;
+  }
+  &__image {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #fff;
+  }
+}
+
+@include lg {
+  .projects {
+    padding: 5rem 5rem;
+    &__imageContainer {
+      height: 55rem;
+      // width: 45rem;
+    }
+  }
+}
