@@ -10,21 +10,20 @@
   &__outerContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    // width: 26rem;
-    height: 40rem;
+
     background-color: $beige;
     margin: 2rem 0;
     padding: 0 2rem;
     border-radius: 5px;
+    box-shadow: 8px 8px 15px #8f8d8d;
   }
   &__imageContainer {
     height: 20rem;
     width: auto;
     display: flex;
-    // border-radius: 5px;
-    transform: translateY(-15%);
+    padding: 2rem 0;
   }
   &__image {
     height: 100%;
@@ -35,9 +34,6 @@
 }
 
 @include md {
-  // .container {
-  //   justify-content: center;
-  // }
   .cards {
     flex-direction: row;
     flex-wrap: wrap;
@@ -45,7 +41,7 @@
 
     &__outerContainer {
       height: 50rem;
-      // width: 40rem;
+
       margin: 5rem 0;
     }
     &__imageContainer {
@@ -59,5 +55,60 @@
     &__outerContainer {
       width: 45rem;
     }
+  }
+}
+
+//background blob
+
+.curvedPink {
+  // background-color: $beige-secondary;
+  // margin: 0 !important;
+  position: relative;
+  top: -50rem;
+  z-index: -1;
+}
+
+.curved__upperPink {
+  background-color: #fff;
+  position: relative;
+  top: -50rem;
+}
+.curved__upperPink svg {
+  display: block;
+}
+.curvedPink svg {
+  display: block;
+}
+.curvedPink {
+  background-color: $pink;
+  position: relative;
+  top: -50rem;
+}
+.pinkBlock {
+  height: 50rem;
+  background-color: $pink;
+  position: relative;
+  top: -50rem;
+}
+
+@include md {
+  .project-background {
+    top: -30rem;
+  }
+  .curvedPink {
+    top: -30rem;
+
+    &__upperPink {
+      top: -20rem;
+      &--pink {
+        top: -50rem;
+      }
+    }
+  }
+  .curvedPink {
+    top: -50rem;
+  }
+  .pinkBlock {
+    top: -50rem;
   }
 }

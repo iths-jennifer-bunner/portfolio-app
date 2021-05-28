@@ -1,308 +1,310 @@
-let canvas, ctx;
-let render, init;
-let blob;
+// //Bör flytta ut denna fil utanför Components
 
-class Blob {
-  constructor() {
-    this.points = [];
-  }
+// let canvas, ctx;
+// let render, init;
+// let blob;
 
-  init() {
-    for (let i = 0; i < this.numPoints; i++) {
-      let point = new Point(this.divisional * (i + 1), this);
-      // point.acceleration = -1 + Math.random() * 2;
-      this.push(point);
-    }
-  }
+// class Blob {
+//   constructor() {
+//     this.points = [];
+//   }
 
-  render() {
-    let canvas = this.canvas;
-    let ctx = this.ctx;
-    let position = this.position;
-    let pointsArray = this.points;
-    let radius = this.radius;
-    let points = this.numPoints;
-    let divisional = this.divisional;
-    let center = this.center;
+//   init() {
+//     for (let i = 0; i < this.numPoints; i++) {
+//       let point = new Point(this.divisional * (i + 1), this);
+//       // point.acceleration = -1 + Math.random() * 2;
+//       this.push(point);
+//     }
+//   }
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+//   render() {
+//     let canvas = this.canvas;
+//     let ctx = this.ctx;
+//     let position = this.position;
+//     let pointsArray = this.points;
+//     let radius = this.radius;
+//     let points = this.numPoints;
+//     let divisional = this.divisional;
+//     let center = this.center;
 
-    pointsArray[0].solveWith(pointsArray[points - 1], pointsArray[1]);
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    let p0 = pointsArray[points - 1].position;
-    let p1 = pointsArray[0].position;
-    let _p2 = p1;
+//     pointsArray[0].solveWith(pointsArray[points - 1], pointsArray[1]);
 
-    ctx.beginPath();
-    ctx.moveTo(center.x, center.y);
-    ctx.moveTo((p0.x + p1.x) / 2, (p0.y + p1.y) / 2);
+//     let p0 = pointsArray[points - 1].position;
+//     let p1 = pointsArray[0].position;
+//     let _p2 = p1;
 
-    for (let i = 1; i < points; i++) {
-      pointsArray[i].solveWith(
-        pointsArray[i - 1],
-        pointsArray[i + 1] || pointsArray[0]
-      );
+//     ctx.beginPath();
+//     ctx.moveTo(center.x, center.y);
+//     ctx.moveTo((p0.x + p1.x) / 2, (p0.y + p1.y) / 2);
 
-      let p2 = pointsArray[i].position;
-      var xc = (p1.x + p2.x) / 2;
-      var yc = (p1.y + p2.y) / 2;
-      ctx.quadraticCurveTo(p1.x, p1.y, xc, yc);
-      // ctx.lineTo(p2.x, p2.y);
+//     for (let i = 1; i < points; i++) {
+//       pointsArray[i].solveWith(
+//         pointsArray[i - 1],
+//         pointsArray[i + 1] || pointsArray[0]
+//       );
 
-      ctx.fillStyle = "#F2BC79";
-      // ctx.fillRect(p1.x-2.5, p1.y-2.5, 5, 5);
+//       let p2 = pointsArray[i].position;
+//       var xc = (p1.x + p2.x) / 2;
+//       var yc = (p1.y + p2.y) / 2;
+//       ctx.quadraticCurveTo(p1.x, p1.y, xc, yc);
+//       // ctx.lineTo(p2.x, p2.y);
 
-      p1 = p2;
-    }
+//       ctx.fillStyle = "#F2BC79";
+//       // ctx.fillRect(p1.x-2.5, p1.y-2.5, 5, 5);
 
-    var xc = (p1.x + _p2.x) / 2;
-    var yc = (p1.y + _p2.y) / 2;
-    ctx.quadraticCurveTo(p1.x, p1.y, xc, yc);
-    // ctx.lineTo(_p2.x, _p2.y);
+//       p1 = p2;
+//     }
 
-    // ctx.closePath();
-    ctx.fillStyle = this.color;
-    ctx.fill();
-    ctx.strokeStyle = "#F2BC79";
-    // ctx.stroke();
+//     var xc = (p1.x + _p2.x) / 2;
+//     var yc = (p1.y + _p2.y) / 2;
+//     ctx.quadraticCurveTo(p1.x, p1.y, xc, yc);
+//     // ctx.lineTo(_p2.x, _p2.y);
 
-    /*
-    ctx.fillStyle = '#F2BC79';
-    if(this.mousePos) {
-      let angle = Math.atan2(this.mousePos.y, this.mousePos.x) + Math.PI;
-      ctx.fillRect(center.x + Math.cos(angle) * this.radius, center.y + Math.sin(angle) * this.radius, 5, 5);
-    }
-*/
-    requestAnimationFrame(this.render.bind(this));
-  }
+//     // ctx.closePath();
+//     ctx.fillStyle = this.color;
+//     ctx.fill();
+//     ctx.strokeStyle = "#F2BC79";
+//     // ctx.stroke();
 
-  push(item) {
-    if (item instanceof Point) {
-      this.points.push(item);
-    }
-  }
+//     /*
+//     ctx.fillStyle = '#F2BC79';
+//     if(this.mousePos) {
+//       let angle = Math.atan2(this.mousePos.y, this.mousePos.x) + Math.PI;
+//       ctx.fillRect(center.x + Math.cos(angle) * this.radius, center.y + Math.sin(angle) * this.radius, 5, 5);
+//     }
+// */
+//     requestAnimationFrame(this.render.bind(this));
+//   }
 
-  set color(value) {
-    this._color = value;
-  }
-  get color() {
-    return this._color || "#F2BC79";
-  }
+//   push(item) {
+//     if (item instanceof Point) {
+//       this.points.push(item);
+//     }
+//   }
 
-  set canvas(value) {
-    if (
-      value instanceof HTMLElement &&
-      value.tagName.toLowerCase() === "canvas"
-    ) {
-      this._canvas = canvas;
-      this.ctx = this._canvas.getContext("2d");
-    }
-  }
-  get canvas() {
-    return this._canvas;
-  }
+//   set color(value) {
+//     this._color = value;
+//   }
+//   get color() {
+//     return this._color || "#F2BC79";
+//   }
 
-  set numPoints(value) {
-    if (value > 2) {
-      this._points = value;
-    }
-  }
-  get numPoints() {
-    return this._points || 32;
-  }
+//   set canvas(value) {
+//     if (
+//       value instanceof HTMLElement &&
+//       value.tagName.toLowerCase() === "canvas"
+//     ) {
+//       this._canvas = canvas;
+//       this.ctx = this._canvas.getContext("2d");
+//     }
+//   }
+//   get canvas() {
+//     return this._canvas;
+//   }
 
-  set radius(value) {
-    if (value > 0) {
-      this._radius = value;
-    }
-  }
-  get radius() {
-    return this._radius || 350;
-  }
+//   set numPoints(value) {
+//     if (value > 2) {
+//       this._points = value;
+//     }
+//   }
+//   get numPoints() {
+//     return this._points || 32;
+//   }
 
-  set position(value) {
-    if (typeof value == "object" && value.x && value.y) {
-      this._position = value;
-    }
-  }
-  get position() {
-    return this._position || { x: 0.5, y: 0.5 };
-  }
+//   set radius(value) {
+//     if (value > 0) {
+//       this._radius = value;
+//     }
+//   }
+//   get radius() {
+//     return this._radius || 150; //350
+//   }
 
-  get divisional() {
-    return (Math.PI * 2) / this.numPoints;
-  }
+//   set position(value) {
+//     if (typeof value == "object" && value.x && value.y) {
+//       this._position = value;
+//     }
+//   }
+//   get position() {
+//     return this._position || { x: 0.5, y: 0.5 };
+//   }
 
-  get center() {
-    return {
-      x: this.canvas.width * this.position.x,
-      y: this.canvas.height * this.position.y,
-    };
-  }
+//   get divisional() {
+//     return (Math.PI * 2) / this.numPoints;
+//   }
 
-  set running(value) {
-    this._running = value === true;
-  }
-  get running() {
-    return this.running !== false;
-  }
-}
+//   get center() {
+//     return {
+//       x: this.canvas.width * this.position.x,
+//       y: this.canvas.height * this.position.y,
+//     };
+//   }
 
-class Point {
-  constructor(azimuth, parent) {
-    this.parent = parent;
-    this.azimuth = Math.PI - azimuth;
-    this._components = {
-      x: Math.cos(this.azimuth),
-      y: Math.sin(this.azimuth),
-    };
+//   set running(value) {
+//     this._running = value === true;
+//   }
+//   get running() {
+//     return this.running !== false;
+//   }
+// }
 
-    this.acceleration = -0.3 + Math.random() * 0.8;
-  }
+// class Point {
+//   constructor(azimuth, parent) {
+//     this.parent = parent;
+//     this.azimuth = Math.PI - azimuth;
+//     this._components = {
+//       x: Math.cos(this.azimuth),
+//       y: Math.sin(this.azimuth),
+//     };
 
-  solveWith(leftPoint, rightPoint) {
-    this.acceleration =
-      (-0.3 * this.radialEffect +
-        (leftPoint.radialEffect - this.radialEffect) +
-        (rightPoint.radialEffect - this.radialEffect)) *
-        this.elasticity -
-      this.speed * this.friction;
-  }
+//     this.acceleration = -0.3 + Math.random() * 0.6; //0,8
+//   }
 
-  set acceleration(value) {
-    if (typeof value == "number") {
-      this._acceleration = value;
-      this.speed += this._acceleration * 4;
-    }
-  }
-  get acceleration() {
-    return this._acceleration || 0;
-  }
+//   solveWith(leftPoint, rightPoint) {
+//     this.acceleration =
+//       (-0.3 * this.radialEffect +
+//         (leftPoint.radialEffect - this.radialEffect) +
+//         (rightPoint.radialEffect - this.radialEffect)) *
+//         this.elasticity -
+//       this.speed * this.friction;
+//   }
 
-  set speed(value) {
-    if (typeof value == "number") {
-      this._speed = value;
-      this.radialEffect += this._speed * 5;
-    }
-  }
-  get speed() {
-    return this._speed || 0;
-  }
+//   set acceleration(value) {
+//     if (typeof value == "number") {
+//       this._acceleration = value;
+//       this.speed += this._acceleration * 2; //4
+//     }
+//   }
+//   get acceleration() {
+//     return this._acceleration || 0;
+//   }
 
-  set radialEffect(value) {
-    if (typeof value == "number") {
-      this._radialEffect = value;
-    }
-  }
-  get radialEffect() {
-    return this._radialEffect || 0;
-  }
+//   set speed(value) {
+//     if (typeof value == "number") {
+//       this._speed = value;
+//       this.radialEffect += this._speed * 5;
+//     }
+//   }
+//   get speed() {
+//     return this._speed || 0;
+//   }
 
-  get position() {
-    return {
-      x:
-        this.parent.center.x +
-        this.components.x * (this.parent.radius + this.radialEffect),
-      y:
-        this.parent.center.y +
-        this.components.y * (this.parent.radius + this.radialEffect),
-    };
-  }
+//   set radialEffect(value) {
+//     if (typeof value == "number") {
+//       this._radialEffect = value;
+//     }
+//   }
+//   get radialEffect() {
+//     return this._radialEffect || 0;
+//   }
 
-  get components() {
-    return this._components;
-  }
+//   get position() {
+//     return {
+//       x:
+//         this.parent.center.x +
+//         this.components.x * (this.parent.radius + this.radialEffect),
+//       y:
+//         this.parent.center.y +
+//         this.components.y * (this.parent.radius + this.radialEffect),
+//     };
+//   }
 
-  set elasticity(value) {
-    if (typeof value === "number") {
-      this._elasticity = value;
-    }
-  }
-  get elasticity() {
-    return this._elasticity || 0.001;
-  }
-  set friction(value) {
-    if (typeof value === "number") {
-      this._friction = value;
-    }
-  }
-  get friction() {
-    return this._friction || 0.0085;
-  }
-}
+//   get components() {
+//     return this._components;
+//   }
 
-blob = new Blob();
+//   set elasticity(value) {
+//     if (typeof value === "number") {
+//       this._elasticity = value;
+//     }
+//   }
+//   get elasticity() {
+//     return this._elasticity || 0.001;
+//   }
+//   set friction(value) {
+//     if (typeof value === "number") {
+//       this._friction = value;
+//     }
+//   }
+//   get friction() {
+//     return this._friction || 0.0085;
+//   }
+// }
 
-init = function () {
-  canvas = document.createElement("canvas");
-  canvas.setAttribute("touch-action", "none");
+// blob = new Blob();
 
-  document.body.appendChild(canvas);
+// init = function () {
+//   canvas = document.createElement("canvas");
+//   canvas.setAttribute("touch-action", "none");
 
-  let resize = function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  };
-  window.addEventListener("resize", resize);
-  resize();
+//   document.body.appendChild(canvas);
 
-  let oldMousePoint = { x: 0, y: 0 };
-  let hover = false;
-  let mouseMove = function (e) {
-    let pos = blob.center;
-    let diff = { x: e.clientX - pos.x, y: e.clientY - pos.y };
-    let dist = Math.sqrt(diff.x * diff.x + diff.y * diff.y);
-    let angle = null;
+//   let resize = function () {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+//   };
+//   window.addEventListener("resize", resize);
+//   resize();
 
-    blob.mousePos = { x: pos.x - e.clientX, y: pos.y - e.clientY };
+//   let oldMousePoint = { x: 0, y: 0 };
+//   let hover = false;
+//   let mouseMove = function (e) {
+//     let pos = blob.center;
+//     let diff = { x: e.clientX - pos.x, y: e.clientY - pos.y };
+//     let dist = Math.sqrt(diff.x * diff.x + diff.y * diff.y);
+//     let angle = null;
 
-    if (dist < blob.radius && hover === false) {
-      let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
-      angle = Math.atan2(vector.y, vector.x);
-      hover = true;
-      // blob.color = '#77FF00';
-    } else if (dist > blob.radius && hover === true) {
-      let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
-      angle = Math.atan2(vector.y, vector.x);
-      hover = false;
-      blob.color = null;
-    }
+//     blob.mousePos = { x: pos.x - e.clientX, y: pos.y - e.clientY };
 
-    if (typeof angle == "number") {
-      let nearestPoint = null;
-      let distanceFromPoint = 100;
+//     if (dist < blob.radius && hover === false) {
+//       let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
+//       angle = Math.atan2(vector.y, vector.x);
+//       hover = true;
+//     } else if (dist > blob.radius && hover === true) {
+//       let vector = { x: e.clientX - pos.x, y: e.clientY - pos.y };
+//       angle = Math.atan2(vector.y, vector.x);
+//       hover = false;
+//       blob.color = null;
+//     }
 
-      blob.points.forEach((point) => {
-        if (Math.abs(angle - point.azimuth) < distanceFromPoint) {
-          // console.log(point.azimuth, angle, distanceFromPoint);
-          nearestPoint = point;
-          distanceFromPoint = Math.abs(angle - point.azimuth);
-        }
-      });
+//     if (typeof angle == "number") {
+//       let nearestPoint = null;
+//       let distanceFromPoint = 100;
 
-      if (nearestPoint) {
-        let strength = {
-          x: oldMousePoint.x - e.clientX,
-          y: oldMousePoint.y - e.clientY,
-        };
-        strength =
-          Math.sqrt(strength.x * strength.x + strength.y * strength.y) * 10;
-        if (strength > 100) strength = 100;
-        nearestPoint.acceleration = (strength / 100) * (hover ? -1 : 1);
-      }
-    }
+//       blob.points.forEach((point) => {
+//         if (Math.abs(angle - point.azimuth) < distanceFromPoint) {
+//           // console.log(point.azimuth, angle, distanceFromPoint);
+//           nearestPoint = point;
+//           distanceFromPoint = Math.abs(angle - point.azimuth);
+//         }
+//       });
 
-    oldMousePoint.x = e.clientX;
-    oldMousePoint.y = e.clientY;
-  };
-  // window.addEventListener('mousemove', mouseMove);
-  window.addEventListener("pointermove", mouseMove);
+//       if (nearestPoint) {
+//         let strength = {
+//           x: oldMousePoint.x - e.clientX,
+//           y: oldMousePoint.y - e.clientY,
+//         };
+//         strength =
+//           Math.sqrt(strength.x * strength.x + strength.y * strength.y) * 10;
+//         if (strength > 100) strength = 100;
+//         nearestPoint.acceleration = (strength / 100) * (hover ? -1 : 1);
+//       }
+//     }
 
-  blob.canvas = canvas;
-  blob.init();
-  blob.render();
-};
+//     oldMousePoint.x = e.clientX;
+//     oldMousePoint.y = e.clientY;
+//   };
+//   // window.addEventListener('mousemove', mouseMove);
+//   window.addEventListener("pointermove", mouseMove);
 
-// init();
+//   blob.canvas = canvas;
+//   blob.init();
+//   blob.render();
+// };
 
-export { init, blob, canvas, render };
+// // init();
+
+// export { init, blob, canvas, render };
+// // init();

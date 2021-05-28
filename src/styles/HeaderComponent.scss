@@ -1,32 +1,33 @@
 @import "../App.scss";
 
-// canvas {
-//   position: fixed;
-//   touch-action: none;
-//   top: 0;
-//   left: 0;
-//   fill: $beige;
-//   z-index: -1;
-//   animation: move 13s infinite;
-//   transform-origin: 50% 50%;
-// }
 canvas {
   position: fixed;
   touch-action: none;
+  top: 0;
+  left: 0;
+  // fill: $beige;
+  // z-index: -2;
+  // animation: move 13s infinite;
+  // transform-origin: 50% 50%;
+  // overflow: hidden;
 }
+// canvas {
+//   position: fixed;
+//   touch-action: none;
+// }
 
 .blobBody {
   margin: 0;
   padding: 0;
   // width: 100vw;
-  height: 70vh;
+  height: 100vh; //bör vara 70vh
   overflow: hidden;
   position: relative;
   background: $pink;
   display: flex;
   align-items: center;
   flex-direction: column;
-  z-index: -1;
+  // z-index: -4;
 }
 .header-container {
   display: flex;
@@ -35,15 +36,16 @@ canvas {
   flex-direction: column;
   padding-left: 4rem;
   height: 100vh;
-  width: 100vw;
+  // width: 100vw;
 
   @include md {
     padding-left: 10rem;
   }
 }
-// align-content: flex-start;
-// padding-left: 100px;
 
+.container__title {
+  z-index: 55;
+}
 .header {
   color: black;
   font-style: normal;
@@ -71,10 +73,10 @@ canvas {
     transform: scale(1) translate(10px, -90px);
   }
   38% {
-    transform: scale(1) translate(50vw, 30vh);
+    transform: scale(1.3) translate(50vw, 30vh);
   }
   40% {
-    transform: scale(1) translate(50vw, 30vh);
+    transform: scale(1.3) translate(50vw, 30vh);
   }
   78% {
     transform: scale(1) translate(-20vw, 30vh);
@@ -93,28 +95,7 @@ canvas {
   left: 0;
   fill: #f2bc79;
   width: 50vmax;
-  z-index: -1;
+  // z-index: -1; // has to be minus for the canvas???
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
-
-// @keyframes move {
-//   0% {
-//     transform: scale(1) translate(10px, -90px);
-//   }
-//   38% {
-//     transform: scale(1) translate(50vw, 30vh);
-//   }
-//   40% {
-//     transform: scale(1) translate(50vw, 30vh);
-//   }
-//   78% {
-//     transform: scale(1) translate(-20vw, 30vh);
-//   }
-//   80% {
-//     transform: scale(1) translate(-20vw, 30vh);
-//   }
-//   100% {
-//     transform: scale(1) translate(10px, -90px);
-//   }
-// }

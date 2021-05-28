@@ -12,6 +12,7 @@
   align-items: center;
   flex-direction: column;
   padding: 2rem 0;
+  background-color: $beige-secondary;
 
   p {
     max-width: 60rem;
@@ -47,6 +48,50 @@
     &__imageContainer {
       height: 55rem;
       // width: 45rem;
+    }
+  }
+}
+////background sass
+.project-background {
+  background-color: $beige-secondary;
+  position: relative;
+  top: -15rem;
+}
+.curved {
+  background-color: $beige-secondary;
+  // margin: 0 !important;
+  position: relative;
+  top: -15rem;
+  z-index: -1;
+  // transform: translate(0, -20rem);
+
+  &__upper {
+    background-color: #fff;
+    position: relative;
+    top: -15rem;
+    // transform: translate(0, -20rem);
+  }
+  &__upper svg {
+    display: block;
+    &--beige {
+      display: block;
+      position: relative;
+      // margin: 0 !important;
+    }
+  }
+}
+.curved svg {
+  display: block;
+}
+@include md {
+  .project-background {
+    top: -30rem;
+  }
+  .curved {
+    top: -30rem;
+
+    &__upper {
+      top: -30rem;
     }
   }
 }
