@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+  // margin-bottom: -50rem;
 
   &__outerContainer {
     display: flex;
@@ -17,7 +18,7 @@
     margin: 2rem 0;
     padding: 0 2rem;
     border-radius: 5px;
-    box-shadow: 8px 8px 15px #8f8d8d;
+    box-shadow: 8px 8px 15px #262223;
   }
   &__imageContainer {
     height: 20rem;
@@ -41,7 +42,6 @@
 
     &__outerContainer {
       height: 50rem;
-
       margin: 5rem 0;
     }
     &__imageContainer {
@@ -59,19 +59,15 @@
 }
 
 //background blob
-
-.curvedPink {
-  // background-color: $beige-secondary;
-  // margin: 0 !important;
-  position: relative;
-  top: -50rem;
+.parallax {
+  position: absolute;
+  width: 100%;
+  top: 670rem;
   z-index: -1;
 }
-
 .curved__upperPink {
   background-color: #fff;
-  position: relative;
-  top: -50rem;
+  margin: 0;
 }
 .curved__upperPink svg {
   display: block;
@@ -81,34 +77,10 @@
 }
 .curvedPink {
   background-color: $pink;
-  position: relative;
-  top: -50rem;
+  margin: 0;
 }
 .pinkBlock {
-  height: 50rem;
+  height: 25rem;
   background-color: $pink;
-  position: relative;
-  top: -50rem;
-}
-
-@include md {
-  .project-background {
-    top: -30rem;
-  }
-  .curvedPink {
-    top: -30rem;
-
-    &__upperPink {
-      top: -20rem;
-      &--pink {
-        top: -50rem;
-      }
-    }
-  }
-  .curvedPink {
-    top: -50rem;
-  }
-  .pinkBlock {
-    top: -50rem;
-  }
+  margin: 0;
 }

@@ -1,18 +1,17 @@
 @import "../App.scss";
 
-.wrapper {
-  margin-top: 0 !important;
-  //to avoid whitespace on mobile beige background
-  // position: relative;
-  // top: -20rem;
+.project-background {
+  background-color: $beige-secondary;
+  height: 35rem;
+  z-index: -1;
 }
+
 .projects {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 2rem 0;
-  background-color: $beige-secondary;
 
   p {
     max-width: 60rem;
@@ -32,6 +31,9 @@
     height: 22rem;
     width: auto;
     padding: 2rem 2rem;
+    &--boCapitalImg {
+      padding-bottom: 4rem;
+    }
   }
   &__image {
     height: 100%;
@@ -47,51 +49,29 @@
     padding: 5rem 5rem;
     &__imageContainer {
       height: 55rem;
-      // width: 45rem;
     }
   }
 }
-////background sass
-.project-background {
-  background-color: $beige-secondary;
-  position: relative;
-  top: -15rem;
+
+.parallax-projects {
+  position: absolute;
+  width: 100%;
+  top: 100rem;
+  z-index: -1;
 }
 .curved {
   background-color: $beige-secondary;
-  // margin: 0 !important;
-  position: relative;
-  top: -15rem;
-  z-index: -1;
-  // transform: translate(0, -20rem);
 
   &__upper {
     background-color: #fff;
-    position: relative;
-    top: -15rem;
-    // transform: translate(0, -20rem);
   }
   &__upper svg {
     display: block;
     &--beige {
       display: block;
-      position: relative;
-      // margin: 0 !important;
     }
   }
 }
 .curved svg {
   display: block;
-}
-@include md {
-  .project-background {
-    top: -30rem;
-  }
-  .curved {
-    top: -30rem;
-
-    &__upper {
-      top: -30rem;
-    }
-  }
 }

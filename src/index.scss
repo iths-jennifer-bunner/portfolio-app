@@ -13,27 +13,33 @@ html {
 
 p {
   font-family: $space-mono;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  line-height: 24px;
+  color: #262223;
+  font-weight: 500;
 }
 
 h1,
 h2 {
   font-family: $poppins;
+  color: #262223;
 }
 h3 {
   font-family: $poppins;
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   font-weight: 500;
   line-height: 36px;
   text-align: center;
   padding-bottom: 1rem;
+  color: #262223;
 }
 h4 {
   font-family: $poppins;
-  font-size: 1.4rem;
-  font-weight: bold;
+  font-size: 2.4rem;
+  font-weight: 500;
   line-height: 21px;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+  color: #262223;
 }
 a {
   text-decoration: none !important;
@@ -52,3 +58,8 @@ li {
 //   background-color: $Lightgray;
 //   // background-color: grey;
 // }
+@include md {
+  p {
+    font-size: 1.6rem;
+  }
+}

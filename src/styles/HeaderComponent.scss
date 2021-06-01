@@ -34,39 +34,55 @@ canvas {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding-left: 4rem;
   height: 100vh;
   // width: 100vw;
+}
 
+.container__title {
+  z-index: 1;
+  padding-left: 4rem;
   @include md {
     padding-left: 10rem;
   }
 }
-
-.container__title {
-  z-index: 55;
-}
 .header {
   color: black;
   font-style: normal;
-  z-index: 1;
+  // z-index: 1;
 
   &__title {
-    font-size: 64px;
-    line-height: 96px;
-    font-weight: 300;
+    font-size: 54px;
+    line-height: 50px;
+    font-weight: 900;
     letter-spacing: 2px;
     font-family: $poppins;
+    padding: 2rem 0;
+    transform: translateX(-600px);
+    animation: 0.6s slideIn ease-in forwards 1s;
+    opacity: 0;
   }
   &__secondTitle {
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: bold;
     letter-spacing: 2px;
     font-family: $poppins;
     align-self: flex-start;
+    transform: translateY(600px);
+    animation: 1.6s slideIn ease-in forwards 1s;
+    opacity: 0;
   }
 }
+@keyframes slideIn {
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+// .fa-chevron-down {
+//   // z-index: 1;
+//   font-size: 2rem;
+// }
 
 @keyframes move {
   0% {
@@ -98,4 +114,18 @@ canvas {
   // z-index: -1; // has to be minus for the canvas???
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
+}
+
+@include md {
+  .header {
+    &__title {
+      font-size: 94px;
+      line-height: 96px;
+    }
+
+    &__secondTitle {
+      font-size: 44px;
+      line-height: 36px;
+    }
+  }
 }
