@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+// import ReactDOM from "react-dom";
 import "../styles/HeaderComponent.scss";
 
 // import { init } from "../scripts/blob";
@@ -58,9 +58,9 @@ function HeaderComponent() {
       )} */}
       <div className="container__title">
         <h1 className="header__title">JENNIFER BUNNER</h1>
-        <h2 className="header__secondTitle">FRONTEND DEVELOPER</h2>{" "}
-        {/* <i class="fas fa-chevron-down"></i> */}
+        <h2 className="header__secondTitle">FRONTEND DEVELOPER</h2>
       </div>
+      <i className="fas fa-chevron-down bounce"></i>
     </div>
   );
 }

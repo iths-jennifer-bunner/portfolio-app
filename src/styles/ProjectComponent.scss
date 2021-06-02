@@ -40,7 +40,7 @@
     max-width: 100%;
     object-fit: cover;
     border-radius: 5px;
-    border: 2px solid #fff;
+    border: 2px solid rgba(#fff, 0.2);
   }
 }
 
@@ -59,19 +59,7 @@
   top: 100rem;
   z-index: -1;
 }
-.curved {
-  background-color: $beige-secondary;
 
-  &__upper {
-    background-color: #fff;
-  }
-  &__upper svg {
-    display: block;
-    &--beige {
-      display: block;
-    }
-  }
-}
-.curved svg {
+.svg svg {
   display: block;
 }

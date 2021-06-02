@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
-  // margin-bottom: -50rem;
 
   &__outerContainer {
     display: flex;
@@ -18,7 +17,9 @@
     margin: 2rem 0;
     padding: 0 2rem;
     border-radius: 5px;
-    box-shadow: 8px 8px 15px #262223;
+    box-shadow: 0 0 10px 0 rgba(000, 000, 0, 0.4);
+    // box-shadow: 8px 8px 15px #262223;
+    border: 2px solid rgba(#fff, 0.1);
   }
   &__imageContainer {
     height: 20rem;
@@ -33,7 +34,18 @@
     border-radius: 5px;
   }
 }
-
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.2s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
 @include md {
   .cards {
     flex-direction: row;
@@ -62,25 +74,6 @@
 .parallax {
   position: absolute;
   width: 100%;
-  top: 670rem;
+  top: 710rem;
   z-index: -1;
-}
-.curved__upperPink {
-  background-color: #fff;
-  margin: 0;
-}
-.curved__upperPink svg {
-  display: block;
-}
-.curvedPink svg {
-  display: block;
-}
-.curvedPink {
-  background-color: $pink;
-  margin: 0;
-}
-.pinkBlock {
-  height: 25rem;
-  background-color: $pink;
-  margin: 0;
 }

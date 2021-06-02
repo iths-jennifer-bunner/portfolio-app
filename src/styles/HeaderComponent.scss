@@ -37,7 +37,19 @@ canvas {
   height: 100vh;
   // width: 100vw;
 }
-
+.fa-chevron-down {
+  align-self: center;
+  justify-self: center;
+  z-index: 1;
+  transform: translateY(5rem);
+  font-size: 2rem;
+  color: #262223;
+  animation: bounce 2s;
+  animation-delay: 3s;
+  animation-iteration-count: 3;
+  // animation-iteration-count: infinite;
+  opacity: 0;
+}
 .container__title {
   z-index: 1;
   padding-left: 4rem;
@@ -46,10 +58,6 @@ canvas {
   }
 }
 .header {
-  color: black;
-  font-style: normal;
-  // z-index: 1;
-
   &__title {
     font-size: 54px;
     line-height: 50px;
@@ -79,10 +87,23 @@ canvas {
     opacity: 1;
   }
 }
-// .fa-chevron-down {
-//   // z-index: 1;
-//   font-size: 2rem;
-// }
+
+@keyframes bounce {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(5rem);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(9rem);
+  }
+  60% {
+    transform: translateY(7rem);
+  }
+}
 
 @keyframes move {
   0% {
@@ -126,6 +147,25 @@ canvas {
     &__secondTitle {
       font-size: 44px;
       line-height: 36px;
+    }
+  }
+  .fa-chevron-down {
+    transform: translateY(30rem);
+  }
+  @keyframes bounce {
+    0%,
+    25%,
+    50%,
+    75%,
+    100% {
+      transform: translateY(30rem);
+      opacity: 1;
+    }
+    40% {
+      transform: translateY(34rem);
+    }
+    60% {
+      transform: translateY(32rem);
     }
   }
 }
