@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "../styles/ProjectComponent.scss";
 
-function ProjectComponent() {
+function ProjectComponent({ reference }) {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -11,8 +11,9 @@ function ProjectComponent() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [offsetY]);
+
   return (
-    <div className="wrapper projectContainer">
+    <div className="wrapper projectContainer" ref={reference}>
       <div
         className="parallax-projects"
         style={{ transform: `translateY(${offsetY * 0.5}px)` }}
@@ -20,7 +21,7 @@ function ProjectComponent() {
         <div className="svg">
           <svg
             width="100%"
-            height="auto"
+            height="100%"
             viewBox="0 0 1711 1274"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

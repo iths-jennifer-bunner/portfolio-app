@@ -17,10 +17,12 @@
     height: 100%;
     max-width: 100%;
     object-fit: cover;
-    border-radius: 15rem;
+    // border-radius: 15rem;
   }
 }
-
+.about__textField p {
+  margin: 2rem 0;
+}
 @include md {
   .about {
     &__container {

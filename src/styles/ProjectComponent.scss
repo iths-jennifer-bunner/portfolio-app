@@ -19,6 +19,7 @@
   &__container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
   }
 
@@ -31,6 +32,7 @@
     height: 22rem;
     width: auto;
     padding: 2rem 2rem;
+
     &--boCapitalImg {
       padding-bottom: 4rem;
     }
@@ -41,6 +43,14 @@
     object-fit: cover;
     border-radius: 5px;
     border: 2px solid rgba(#fff, 0.2);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  &__image:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
   }
 }
 
@@ -49,6 +59,9 @@
     padding: 5rem 5rem;
     &__imageContainer {
       height: 55rem;
+    }
+    &__container {
+      flex-wrap: nowrap;
     }
   }
 }

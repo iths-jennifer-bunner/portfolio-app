@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../styles/SchoolProjects.scss";
 import { useElementOnScreen } from "../scripts/useElementOnScreen";
 
-function SchoolProjects() {
+function SchoolProjects({ reference }) {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -21,131 +21,146 @@ function SchoolProjects() {
   }, [offsetY]);
 
   return (
-    <div className="schoolProject-container">
+    <div className="schoolProject-container" ref={reference}>
       <div className="wrapper">
         <h3>SKOLUPPGIFTER</h3>
-        <div
-          className="cards"
-          // ref={domRef}
-          // className={`cards fade-in-section ${isVisible ? "is-visible" : ""}`}
-        >
-          <div
-            ref={containerRef}
-            className={`cards__outerContainer fade-in-section ${
-              isVisible ? "is-visible" : ""
-            }`}
-          >
-            <div className="cards__imageContainer">
-              <Link to="/canvas">
+        <p>Nedan följer några utvalda skolprojekt:</p>
+        <div className="cards">
+          <a href="http://ankra.jakobg.se/">
+            <div
+              ref={containerRef}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible ? "is-visible" : ""
+              }`}
+            >
+              <div className="cards__imageContainer">
+                <img
+                  className="cards__image"
+                  alt="schoolProject"
+                  src="../../images/ankra.png"
+                />
+              </div>
+
+              <h4>ANKRA</h4>
+              <p>
+                Det här är en sida vi skapade under ett grupparbete i Wordpress.
+                Vi hade i uppgift att skapa ett eget tema för en bokningssite
+                för gästhamnar i Sverige. Stor kredd till Jakob som deployade
+                sidan och lärde mig mycket om Wordpress.
+              </p>
+            </div>
+          </a>
+          <a href="https://github.com/iths-jennifer-bunner/guessTheNumber">
+            <div
+              ref={containerRef}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible ? "is-visible" : ""
+              }`}
+            >
+              <div className="cards__imageContainer">
+                <img
+                  className="cards__image"
+                  alt="schoolProject"
+                  src="../../images/guessTheNumber.png"
+                />
+              </div>
+              <h4>Guess The Number</h4>
+              <p>
+                Här var uppgiften att skapa ett spel, man skulle gissa nummret.
+                Gissade man för lågt eller för högt så får man ett meddelande
+                och man har tio chanser på sig att gissa.
+              </p>
+            </div>
+          </a>
+          <a href="https://github.com/iths-jennifer-bunner/colorChanger">
+            <div
+              ref={containerRef}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible ? "is-visible" : ""
+              }`}
+            >
+              <div className="cards__imageContainer">
+                <img
+                  className="cards__image"
+                  alt="schoolProject"
+                  src="../../images/colorchanger.png"
+                />
+              </div>
+
+              <h4>Color Changer</h4>
+              <p>
+                Denna uppgift var att skapa ett inputfält som när önskad färg
+                väljs så byter bakgrunden till önskad färg, inputfältet kan även
+                visa förslag över färger då man börjar skriva.
+              </p>
+            </div>
+          </a>
+          <a href="#">
+            <div
+              ref={containerRef2}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible2 ? "is-visible" : ""
+              }`}
+            >
+              <div className="cards__imageContainer">
+                <img
+                  className="cards__image"
+                  alt="schoolProject"
+                  src="../../images/zignsec.jpg"
+                />
+              </div>
+
+              <h4>ZignSec Portal</h4>
+              <p>
+                Jag och en till student hade i uppgift att skapa en "ny" portal
+                med förbättrad UI. Vi valde att bygga den i React.js. Vi lärde
+                oss bla att skapa en login med Bearer Token, samt hämta
+                information från Api.
+              </p>
+            </div>
+          </a>
+          <a href="https://github.com/iths-jennifer-bunner/star-wars">
+            <div
+              ref={containerRef2}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible2 ? "is-visible" : ""
+              }`}
+            >
+              <div className="cards__imageContainer">
+                <img
+                  className="cards__image"
+                  alt="schoolProject"
+                  src="../../images/starwars.png"
+                />
+              </div>
+              <h4>Star Wars</h4>
+              <p>
+                Labbade med StarWars Apiet SWAPI med att loopa ut personer från
+                StarWars-filmerna.
+              </p>
+            </div>
+          </a>
+          <a href="https://github.com/iths-jennifer-bunner/canvas">
+            <div
+              ref={containerRef2}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible2 ? "is-visible" : ""
+              }`}
+            >
+              <div className="cards__imageContainer">
                 <img
                   className="cards__image"
                   alt="schoolProject"
                   src="../../images/canvas.png"
                 />
-              </Link>
+              </div>
+              <h4>Canvas</h4>
+              <p>
+                Testade på HTML elementet canvas där bubblor skapades och
+                påverkades av hur musen rör sig på skärmen.
+              </p>
             </div>
-            <h4>Canvas</h4>
-            <p>Labbade runt lite och testade på HTML5 Canvas</p>
-          </div>
-          <div
-            ref={containerRef}
-            className={`cards__outerContainer fade-in-section ${
-              isVisible ? "is-visible" : ""
-            }`}
-          >
-            <div className="cards__imageContainer">
-              <Link to="/guessTheNumber">
-                <img
-                  className="cards__image"
-                  alt="schoolProject"
-                  src="../../images/ukkonpng.png"
-                />
-              </Link>
-            </div>
-            <h4>Guess The Number</h4>
-            <p>
-              level of the spectator on a hillside, the sable cloud beneath was
-              dished out, and the car seemed to float in the miwas strewn with
-              silver. Looking down into the dark gulf below, I could see a ru
-            </p>
-          </div>
-          <div
-            ref={containerRef}
-            className={`cards__outerContainer fade-in-section ${
-              isVisible ? "is-visible" : ""
-            }`}
-          >
-            <div className="cards__imageContainer">
-              <img
-                className="cards__image"
-                alt="schoolProject"
-                src="../../images/ukkonpng.png"
-              />
-            </div>
-            <p>
-              level of the spectator on a hillside, the sable cloud beneath was
-              dished out, and the car seemed to float in the miwas strewn with
-              silver. Looking down into the dark gulf below, I could see a ru
-            </p>
-          </div>
-          <div
-            ref={containerRef2}
-            className={`cards__outerContainer fade-in-section ${
-              isVisible2 ? "is-visible" : ""
-            }`}
-          >
-            <div className="cards__imageContainer">
-              <img
-                className="cards__image"
-                alt="schoolProject"
-                src="../../images/ukkonpng.png"
-              />
-            </div>
-            <p>
-              level of the spectator on a hillside, the sable cloud beneath was
-              dished out, and the car seemed to float in the miwas strewn with
-              silver. Looking down into the dark gulf below, I could see a ru
-            </p>
-          </div>
-          <div
-            ref={containerRef2}
-            className={`cards__outerContainer fade-in-section ${
-              isVisible2 ? "is-visible" : ""
-            }`}
-          >
-            <div className="cards__imageContainer">
-              <img
-                className="cards__image"
-                alt="schoolProject"
-                src="../../images/ukkonpng.png"
-              />
-            </div>
-            <p>
-              level of the spectator on a hillside, the sable cloud beneath was
-              dished out, and the car seemed to float in the miwas strewn with
-              silver. Looking down into the dark gulf below, I could see a ru
-            </p>
-          </div>
-
-          <div
-            ref={containerRef2}
-            className={`cards__outerContainer fade-in-section ${
-              isVisible2 ? "is-visible" : ""
-            }`}
-          >
-            <div className="cards__imageContainer">
-              <img
-                className="cards__image"
-                alt="schoolProject"
-                src="../../images/ukkonpng.png"
-              />
-            </div>
-            <p>
-              level of the spectator on a hillside, the sable cloud beneath was
-              dished out, and the car seemed to float in the miwas strewn with
-              silver. Looking down into the dark gulf below, I could see a ru
-            </p>
-          </div>
+          </a>
         </div>
       </div>
       <div
@@ -155,7 +170,7 @@ function SchoolProjects() {
         <div className="svg">
           <svg
             width="100%"
-            height="auto"
+            height="100%"
             viewBox="0 0 1900 954"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

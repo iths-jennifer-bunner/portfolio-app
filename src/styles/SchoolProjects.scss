@@ -6,26 +6,35 @@
   justify-content: center;
   align-items: center;
   z-index: 1;
+  padding-top: 2rem;
 
   &__outerContainer {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
+    cursor: pointer;
     background-color: $beige;
     margin: 2rem 0;
     padding: 0 2rem;
     border-radius: 5px;
     box-shadow: 0 0 10px 0 rgba(000, 000, 0, 0.4);
-    // box-shadow: 8px 8px 15px #262223;
     border: 2px solid rgba(#fff, 0.1);
   }
+
   &__imageContainer {
     height: 20rem;
     width: auto;
     display: flex;
     padding: 2rem 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+  }
+  &__imageContainer:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
   }
   &__image {
     height: 100%;
@@ -46,6 +55,7 @@
   transform: none;
   visibility: visible;
 }
+
 @include md {
   .cards {
     flex-direction: row;

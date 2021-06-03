@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/KnowledgeComponent.scss";
 
-function KnowledgeComponent() {
+function KnowledgeComponent({ reference }) {
   return (
-    <div className="wrapper">
+    <div className="wrapper" ref={reference}>
       <h3>KUNSKAPER</h3>
       <div className="knowledge__container">
         <p>
@@ -34,6 +34,18 @@ function KnowledgeComponent() {
           sedan loopade ut resultaten på en ny sida. Även denna portal skapade
           vi vår egen design i Figma.
         </p>
+      </div>
+
+      <div className="knowledge__iconsContainer">
+        <i className="fab fa-js-square knowledge__icons"></i>
+
+        <i className="fab fa-html5 knowledge__icons"></i>
+
+        <i className="fab fa-css3-alt knowledge__icons"></i>
+        <i className="fab fa-react knowledge__icons"></i>
+        <i className="fab fa-vuejs knowledge__icons"></i>
+        <i className="fab fa-wordpress knowledge__icons"></i>
+        <i className="fab fa-sass knowledge__icons"></i>
       </div>
     </div>
   );

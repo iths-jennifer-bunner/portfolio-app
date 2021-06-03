@@ -21,14 +21,24 @@
   height: 68px;
   max-width: 2000px;
 }
-
-// .navbar-logo {
-//   color: #fff;
+// .nav-imgContainer {
+//   height: auto;
+//   width: 5rem;
 //   justify-self: start;
 //   margin-left: 20px;
 //   cursor: pointer;
 //   text-decoration: none;
-//   font-size: 2rem;
+//   display: flex;
+//   align-items: center;
+// }
+
+// .navbar-logo {
+//   height: 100%;
+//   width: 100%;
+//   justify-self: start;
+//   margin-left: 20px;
+//   cursor: pointer;
+//   text-decoration: none;
 //   display: flex;
 //   align-items: center;
 // }
@@ -123,12 +133,12 @@
     // border-color: #fff;
   }
 
-  // .navbar-logo {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   transform: translate(25%, 50%);
-  // }
+  .nav-imgContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(25%, 50%);
+  }
 
   .menu-icon {
     // color: #fff;

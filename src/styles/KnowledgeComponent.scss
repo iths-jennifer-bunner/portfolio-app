@@ -5,6 +5,19 @@
     // max-width: 60rem;
     margin: 2rem 0;
   }
+  &__iconsContainer {
+    max-width: 60rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 4rem;
+    font-size: 5rem;
+    color: #262223;
+  }
+  &__icons {
+    padding: 2rem;
+  }
 }
 
 .svg svg {
@@ -14,7 +27,9 @@
 @include md {
   .knowledge {
     // width: 60rem;
-
+    &__icons {
+      font-size: 10rem;
+    }
     &__container {
       display: flex;
       justify-content: center;
