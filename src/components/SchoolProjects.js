@@ -24,7 +24,10 @@ function SchoolProjects({ reference }) {
     <div className="schoolProject-container" ref={reference}>
       <div className="wrapper">
         <h3>SKOLUPPGIFTER</h3>
-        <p>Nedan följer några utvalda skolprojekt:</p>
+        <p>
+          Nedan följer några utvalda skolprojekt. Klicka på korten för att se
+          github repot eller sidan.
+        </p>
         <div className="cards">
           <a href="http://ankra.jakobg.se/">
             <div
@@ -95,7 +98,7 @@ function SchoolProjects({ reference }) {
               </p>
             </div>
           </a>
-          <a href="#">
+          <a href="https://github.com/iths-jennifer-bunner/userCard">
             <div
               ref={containerRef2}
               className={`cards__outerContainer fade-in-section ${
@@ -106,16 +109,13 @@ function SchoolProjects({ reference }) {
                 <img
                   className="cards__image"
                   alt="schoolProject"
-                  src="../../images/zignsec.jpg"
+                  src="../../images/cards.png"
                 />
               </div>
-
-              <h4>ZignSec Portal</h4>
+              <h4>Cards</h4>
               <p>
-                Jag och en till student hade i uppgift att skapa en "ny" portal
-                med förbättrad UI. Vi valde att bygga den i React.js. Vi lärde
-                oss bla att skapa en login med Bearer Token, samt hämta
-                information från Api.
+                Här har jag skapat en "carousel" av cards som visar olika
+                personer där informationen hämtas från ett api.
               </p>
             </div>
           </a>

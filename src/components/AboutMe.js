@@ -28,7 +28,7 @@ function AboutMe({ reference }) {
         <div className="about__imageContainer">
           <img
             alt="Jennifer"
-            src="../../images/blob-image.png"
+            src="../../images/blob-image1.png"
             className="about__image"
           />
         </div>
