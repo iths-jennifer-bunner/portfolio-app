@@ -8,9 +8,8 @@ function AboutMe({ reference }) {
       <div className="about__container">
         <div className="about__textField">
           <p>
-            Jag tar min examen om ett par veckor och söker nu jobb där jag kan
-            få möjlighet att utvecklas och skaffa mig erfarenhet ute i
-            arbetslivet.
+            Snart tar min examen och söker nu jobb där jag kan få möjlighet att
+            utvecklas och skaffa mig erfarenhet ute i arbetslivet.
           </p>
           <p>
             Med kunskaper som teamwork, problemlösning och kommunikation samt
