@@ -9,8 +9,7 @@
   // flex-wrap: wrap;
   justify-content: space-between;
 
-  &__leftDiv,
-  &__rightDiv {
+  &__leftDiv {
     padding: 2rem 1rem;
   }
   &__leftDiv {
@@ -28,14 +27,15 @@
     color: #262223;
   }
 }
-
+.fa-github-square {
+  padding-left: 2rem;
+}
 @include md {
   .footer {
     padding: 2rem 15rem;
     &__icon {
       font-size: 3rem;
       flex-direction: row;
-      margin: 0 1rem;
     }
     &__rightDiv {
       display: flex;
