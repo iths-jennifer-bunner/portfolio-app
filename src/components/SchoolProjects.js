@@ -48,8 +48,8 @@ function SchoolProjects({ reference }) {
               <p>
                 Det här är en sida vi skapade under ett grupparbete i Wordpress.
                 Vi hade i uppgift att skapa ett eget tema för en bokningssite
-                för gästhamnar i Sverige. Stor kredd till Jakob som deployade
-                sidan och lärde mig mycket om Wordpress.
+                för gästhamnar i Sverige. Stor kredd till Jakob G i min grupp
+                som deployade sidan och lärde mig mycket om Wordpress.
               </p>
             </div>
           </a>

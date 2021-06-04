@@ -35,12 +35,9 @@ function KnowledgeComponent({ reference }) {
           vi vår egen design i Figma.
         </p>
       </div>
-
       <div className="knowledge__iconsContainer">
         <i className="fab fa-js-square knowledge__icons"></i>
-
         <i className="fab fa-html5 knowledge__icons"></i>
-
         <i className="fab fa-css3-alt knowledge__icons"></i>
         <i className="fab fa-react knowledge__icons"></i>
         <i className="fab fa-vuejs knowledge__icons"></i>

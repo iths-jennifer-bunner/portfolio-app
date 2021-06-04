@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import "../App.scss";
 import "../styles/Navbar.scss";
 
@@ -12,11 +11,6 @@ function Navbar({ reference, navClick, navClick2, navClick3, navClick4 }) {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          {/* <div className="nav-imgContainer">
-            <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-              <img src="Vector.svg" className="navbar-logo" alt="logo" />
-            </Link>{" "}
-          </div> */}
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
