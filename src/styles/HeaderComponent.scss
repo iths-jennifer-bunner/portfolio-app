@@ -1,13 +1,5 @@
 @import "../App.scss";
 
-// canvas {
-//   position: fixed;
-//   touch-action: none;
-//   top: 0;
-//   left: 0;
-
-// }
-
 .blobBody {
   margin: 0;
   padding: 0;
@@ -19,7 +11,15 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  // z-index: -4;
+}
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #f2bc79;
+  width: 50vmax;
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
 }
 .header-container {
   display: flex;
@@ -116,17 +116,6 @@
   100% {
     transform: scale(1) translate(10px, -90px);
   }
-}
-
-.blob {
-  position: absolute;
-  top: 0;
-  left: 0;
-  fill: #f2bc79;
-  width: 50vmax;
-  // z-index: -1; // has to be minus for the canvas???
-  animation: move 10s ease-in-out infinite;
-  transform-origin: 50% 50%;
 }
 
 @include md {
