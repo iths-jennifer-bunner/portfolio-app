@@ -82,8 +82,6 @@
 }
 .svg svg {
   display: block;
-  height: 200%;
-  width: 200%;
 }
 
 @include lg {
@@ -91,9 +89,5 @@
     &__outerContainer {
       width: 45rem;
     }
-  }
-  .svg svg {
-    height: 100%;
-    width: 100%;
   }
 }

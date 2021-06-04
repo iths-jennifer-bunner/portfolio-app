@@ -62,8 +62,6 @@
 
 .svg svg {
   display: block;
-  height: 200%;
-  width: 200%;
 }
 
 @include lg {
@@ -75,9 +73,5 @@
     &__container {
       flex-wrap: nowrap;
     }
-  }
-  svg.svg {
-    width: 100%;
-    top: 100rem;
   }
 }
