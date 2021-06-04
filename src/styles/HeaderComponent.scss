@@ -17,7 +17,7 @@
   top: 0;
   left: 0;
   fill: #f2bc79;
-  width: 50vmax;
+  width: 25vmax;
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
@@ -119,6 +119,9 @@
 }
 
 @include md {
+  .blob {
+    width: 50vmax;
+  }
   .header {
     &__title {
       font-size: 94px;
