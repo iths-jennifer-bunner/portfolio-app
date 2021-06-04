@@ -53,6 +53,18 @@
     transform: scale(1.05);
   }
 }
+.parallax-projects {
+  position: absolute;
+  width: 100%;
+  top: 100rem;
+  z-index: -1;
+}
+
+.svg svg {
+  display: block;
+  height: 200%;
+  width: 200%;
+}
 
 @include lg {
   .projects {
@@ -64,15 +76,8 @@
       flex-wrap: nowrap;
     }
   }
-}
-
-.parallax-projects {
-  position: absolute;
-  width: 100%;
-  top: 100rem;
-  z-index: -1;
-}
-
-.svg svg {
-  display: block;
+  svg.svg {
+    width: 100%;
+    top: 100rem;
+  }
 }

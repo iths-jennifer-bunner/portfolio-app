@@ -72,13 +72,6 @@
     }
   }
 }
-@include lg {
-  .cards {
-    &__outerContainer {
-      width: 45rem;
-    }
-  }
-}
 
 //background blob
 .parallax {
@@ -86,4 +79,21 @@
   width: 100%;
   top: 710rem;
   z-index: -1;
+}
+.svg svg {
+  display: block;
+  height: 200%;
+  width: 200%;
+}
+
+@include lg {
+  .cards {
+    &__outerContainer {
+      width: 45rem;
+    }
+  }
+  .svg svg {
+    height: 100%;
+    width: 100%;
+  }
 }
