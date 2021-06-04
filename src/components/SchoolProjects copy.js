@@ -7,8 +7,6 @@ function SchoolProjects({ reference }) {
   const [offsetY, setOffsetY] = useState(0);
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
-  const [doParallax, setDoParallax] = useState("cards__outerContainer");
-  const [doParallax2, setDoParallax2] = useState("cards__outerContainer");
   const [containerRef, containerRef2, isVisible, isVisible2] =
     useElementOnScreen({
       root: null,
@@ -17,24 +15,20 @@ function SchoolProjects({ reference }) {
     });
 
   useEffect(() => {
-    if (window.innerWidth < 600) {
-      setDoParallax("cards__outerContainer");
-      setDoParallax2("cards__outerContainer");
-    } else {
-      setDoParallax(
-        `cards__outerContainer fade-in-section ${isVisible ? "is-visible" : ""}`
-      );
-      setDoParallax2(
-        `cards__outerContainer fade-in-section ${
-          isVisible2 ? "is-visible" : ""
-        }`
-      );
-    }
-
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [offsetY, isVisible, isVisible2]);
+  }, [offsetY]);
+
+  const [doParallax, setDoParallax] = useState("cards__outerContainer");
+
+  if (window.innerWidth < 600) {
+    setDoParallax("cards__outerContainer");
+  } else {
+    setDoParallax(
+      `cards__outerContainer fade-in-section ${isVisible ? "is-visible" : ""}`
+    );
+  }
 
   return (
     <div className="schoolProject-container" ref={reference}>
@@ -46,7 +40,12 @@ function SchoolProjects({ reference }) {
         </p>
         <div className="cards">
           <a href="http://ankra.jakobg.se/">
-            <div ref={containerRef} className={doParallax}>
+            <div
+              ref={containerRef}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible ? "is-visible" : ""
+              }`}
+            >
               <div className="cards__imageContainer">
                 <img
                   className="cards__image"
@@ -65,7 +64,12 @@ function SchoolProjects({ reference }) {
             </div>
           </a>
           <a href="https://github.com/iths-jennifer-bunner/guessTheNumber">
-            <div ref={containerRef} className={doParallax}>
+            <div
+              ref={containerRef}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible ? "is-visible" : ""
+              }`}
+            >
               <div className="cards__imageContainer">
                 <img
                   className="cards__image"
@@ -82,7 +86,12 @@ function SchoolProjects({ reference }) {
             </div>
           </a>
           <a href="https://github.com/iths-jennifer-bunner/colorChanger">
-            <div ref={containerRef} className={doParallax}>
+            <div
+              ref={containerRef}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible ? "is-visible" : ""
+              }`}
+            >
               <div className="cards__imageContainer">
                 <img
                   className="cards__image"
@@ -100,7 +109,12 @@ function SchoolProjects({ reference }) {
             </div>
           </a>
           <a href="https://github.com/iths-jennifer-bunner/userCard">
-            <div ref={containerRef2} className={doParallax2}>
+            <div
+              ref={containerRef2}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible2 ? "is-visible" : ""
+              }`}
+            >
               <div className="cards__imageContainer">
                 <img
                   className="cards__image"
@@ -116,7 +130,12 @@ function SchoolProjects({ reference }) {
             </div>
           </a>
           <a href="https://github.com/iths-jennifer-bunner/star-wars">
-            <div ref={containerRef2} className={doParallax2}>
+            <div
+              ref={containerRef2}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible2 ? "is-visible" : ""
+              }`}
+            >
               <div className="cards__imageContainer">
                 <img
                   className="cards__image"
@@ -132,7 +151,12 @@ function SchoolProjects({ reference }) {
             </div>
           </a>
           <a href="https://github.com/iths-jennifer-bunner/canvas">
-            <div ref={containerRef2} className={doParallax2}>
+            <div
+              ref={containerRef2}
+              className={`cards__outerContainer fade-in-section ${
+                isVisible2 ? "is-visible" : ""
+              }`}
+            >
               <div className="cards__imageContainer">
                 <img
                   className="cards__image"
