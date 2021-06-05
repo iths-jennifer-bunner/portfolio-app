@@ -17,7 +17,7 @@
     background-color: $beige;
     margin: 2rem 0;
     padding: 0 2rem;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 0 10px 0 rgba(000, 000, 0, 0.4);
     border: 2px solid rgba(#fff, 0.1);
   }
@@ -40,7 +40,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 10px;
   }
 }
 .fade-in-section {
