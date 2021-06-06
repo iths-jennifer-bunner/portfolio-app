@@ -33,7 +33,8 @@ function AboutMe({ reference }) {
             ett jobb inom Frontend-utveckling där jag kan få chansen att utmanas
             och utvecklas. Jag har ett stort intresse av frontend-utveckling och
             jag försöker hela tiden att lära mig nya tekniker för att kunna bli
-            en bättre utvecklare.
+            en bättre utvecklare. Kontakta mig gärna på LinkedIn om ni vill veta
+            mera.
           </p>
           <p>
             Hemsidan är fortfarande under uppbyggnad men jag uppdaterar den allt

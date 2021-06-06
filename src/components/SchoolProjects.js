@@ -42,7 +42,7 @@ function SchoolProjects({ reference }) {
         <h3>SKOLUPPGIFTER</h3>
         <p className="cards__intro">
           Nedan följer några utvalda skolprojekt. Klicka på korten för att se
-          github repot eller sidan. Jag kommer att uppdatera dessa allt
+          github-repot eller sidan. Jag kommer att uppdatera dessa allt
           eftersom.
         </p>
         <div className="cards">

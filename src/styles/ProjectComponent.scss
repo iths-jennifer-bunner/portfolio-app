@@ -65,9 +65,7 @@
 @include lg {
   .projects {
     padding: 5rem 5rem;
-    &__imageContainer {
-      // height: 55rem;
-    }
+
     &__container {
       flex-wrap: nowrap;
     }
