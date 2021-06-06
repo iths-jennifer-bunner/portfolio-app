@@ -40,9 +40,10 @@ function SchoolProjects({ reference }) {
     <div className="schoolProject-container" ref={reference}>
       <div className="wrapper">
         <h3>SKOLUPPGIFTER</h3>
-        <p>
+        <p className="cards__intro">
           Nedan följer några utvalda skolprojekt. Klicka på korten för att se
-          github repot eller sidan.
+          github repot eller sidan. Jag kommer att uppdatera dessa allt
+          eftersom.
         </p>
         <div className="cards">
           <a href="http://ankra.jakobg.se/">
@@ -126,8 +127,9 @@ function SchoolProjects({ reference }) {
               </div>
               <h4>Star Wars</h4>
               <p>
-                Labbade med StarWars Apiet SWAPI med att loopa ut personer från
-                StarWars-filmerna.
+                Uppgiften gick ut på att med hjälp av javascript hämta ut
+                information från StarWars Apiet SWAPI. I detta fall valde jag
+                att loopa ut personerna från StarWars-filmerna.
               </p>
             </div>
           </a>

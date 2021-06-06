@@ -21,7 +21,9 @@
     box-shadow: 0 0 10px 0 rgba(000, 000, 0, 0.4);
     border: 2px solid rgba(#fff, 0.1);
   }
-
+  &__intro {
+    max-width: 60rem;
+  }
   &__imageContainer {
     height: 20rem;
     width: auto;

@@ -47,28 +47,55 @@ function ProjectComponent({ reference }) {
       </div>
       <div>
         <h3>PROJEKT</h3>
-        <div className="projects">
-          <div className="projects__imageContainer projects__imageContainer--boCapitalImg">
-            <a
-              href="https://bocapital.se/"
-              className="projects__imageContainer projects__imageContainer--boCapitalImg"
-            >
-              <img
-                alt="screenshot Hamsterwars"
-                className="projects__image"
-                src="../../images/bocapital.png"
-              />
-            </a>
+        <p className="projects__intro">
+          Dessa är lite större projekt som jag gjort. Jag kommer att uppdatera
+          här allt eftersom.
+        </p>
+        <div className="projects__container">
+          <div className="projects">
+            <div className="projects__imageContainer ">
+              <a
+                href="https://bocapital.se/"
+                className="projects__imageContainer "
+              >
+                <img
+                  alt="screenshot BoCapital"
+                  className="projects__image"
+                  src="../../images/bocapital.png"
+                />
+              </a>
+            </div>
+            <h4>BoCapital</h4>
+            <p>
+              Detta är "marknadssidan" för BoCapital och deras produkt som jag
+              skapade under min första Lia-praktik. Har haft huvudansvar i allt
+              från att rita designen i Figma till development. Den är skriven i
+              Vue och Quasar Framework och jag har även översatt sidan till
+              svenska med i18n.
+            </p>
           </div>
-          <h4>BoCapital</h4>
-          <p>
-            Detta är "marknadssidan" för BoCapital och deras produkt som jag
-            skapade under min första Lia-praktik. Har haft huvudansvar i allt
-            från att rita designen i Figma till development. Den är skriven i
-            Vue och Quasar Framework och jag har även översatt sidan till
-            svenska med i18n.
-          </p>
+          <div className="projects">
+            <div className="projects__imageContainer ">
+              <img
+                alt="screenshot ZignSec"
+                className="projects__image"
+                src="../../images/ZignSec.jpg"
+              />
+            </div>
+            <h4>Zignsec</h4>
+            <p>
+              Under min andra lia hos ZignSec fick jag och en till praktikant i
+              uppdrag att skapa en helt ny portal. Vi kodade den i React och har
+              gjort login med hjälp av api och Bearer Token authentication, till
+              ett avancerat sökformulär som hämtar information från ett annat
+              api som sedan loopade ut resultaten på en ny sida. Även denna
+              portal skapade vi vår egen design i Figma. På grund av personlig
+              information och sekretess kan jag inte länka till koden för denna
+              sida
+            </p>
+          </div>
         </div>
+
         <div className="projects__container">
           <div className="projects">
             <div className="projects__imageContainer">
@@ -94,7 +121,6 @@ function ProjectComponent({ reference }) {
               Firestore.
             </p>
           </div>
-
           <div className="projects">
             <div className="projects__imageContainer">
               <a
