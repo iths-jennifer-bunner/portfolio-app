@@ -9,8 +9,9 @@ function KnowledgeComponent({ reference }) {
         <p>
           Under de två år jag har gått på IT-högskolan har jag fått bra
           kunskaper i HTML, CSS och Javascript. Jag har också goda kunskaper i
-          Sass och Bem-metodiken. Jag har gjort flera projekt i React.js och på
-          min första Lia så kodade jag en sida i Vue.js.
+          Sass och Bem-metodiken och att jobba med Git. Jag har gjort flera
+          projekt i React.js och på min första Lia så kodade jag en sida i
+          Vue.js.
         </p>
         <p>
           Vi har haft en omfattande kurs i Grafisk- och UX design, där vi har
