@@ -13,7 +13,8 @@ html {
   font-size: 10px;
 }
 
-p {
+p,
+label {
   font-family: $space-mono;
   font-size: 1.4rem;
   line-height: 26px;

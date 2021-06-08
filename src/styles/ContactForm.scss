@@ -1,0 +1,36 @@
+@import "../App.scss";
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  &__containers {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  &__button {
+    background-color: $pink;
+    border: $pink;
+    color: #fff;
+  }
+}
+
+input,
+textarea {
+  padding: 2rem 1.5rem;
+  border-radius: 30px;
+  border: 2px solid $beige;
+  box-shadow: 0 0 10px 0 rgba(000, 000, 0, 0.1);
+  width: 20rem;
+}
+
+@include md {
+  input,
+  textarea {
+    padding: 2rem 2rem;
+    width: 30rem;
+  }
+}
