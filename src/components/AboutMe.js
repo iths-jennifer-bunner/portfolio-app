@@ -34,7 +34,7 @@ function AboutMe({ reference }) {
             och utvecklas. Jag har ett stort intresse av frontend-utveckling och
             jag försöker hela tiden att lära mig nya tekniker för att kunna bli
             en bättre utvecklare. Kontakta mig gärna på LinkedIn om ni vill veta
-            mera.
+            eller kontakta mig här genom min kontaktsida. mera.
           </p>
           <p>
             Hemsidan är fortfarande under uppbyggnad men jag uppdaterar den allt
