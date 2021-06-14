@@ -17,7 +17,7 @@ function SchoolProjects({ reference }) {
     });
 
   useEffect(() => {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 1305) {
       setDoParallax("cards__outerContainer");
       setDoParallax2("cards__outerContainer");
     } else {

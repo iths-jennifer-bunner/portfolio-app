@@ -28,19 +28,31 @@ export default function ContactForm() {
     <div className="wrapper">
       <form className="contact-form" onSubmit={sendEmail}>
         <div className="contact-form__containers">
-          <label>Namn:</label>
-          <input type="text" placeholder="Namn" name="from_name" />
+          <label>
+            <p>Namn:</p>
+          </label>
+          <input type="text" placeholder="Förnamn Efternamn" name="from_name" />
         </div>
         <div className="contact-form__containers">
-          <label>Email:</label>
-          <input type="email" placeholder="Din email" name="user_email" />
+          <label>
+            <p>Email:</p>
+          </label>
+          <input
+            type="email"
+            placeholder="email@adress.com"
+            name="user_email"
+          />
         </div>
         <div className="contact-form__containers">
-          <label>Ämne:</label>
+          <label>
+            <p>Ämne:</p>
+          </label>
           <input type="text" placeholder="Ämne" name="subject" />
         </div>
         <div className="contact-form__containers">
-          <label>Meddelande:</label>
+          <label>
+            <p>Meddelande:</p>
+          </label>
           <textarea placeholder="Ditt meddelande" name="message" />
         </div>
         <div className="contact-form__containers">

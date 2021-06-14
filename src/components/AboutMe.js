@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/AboutMe.scss";
 
 function AboutMe({ reference }) {
@@ -34,7 +35,8 @@ function AboutMe({ reference }) {
             och utvecklas. Jag har ett stort intresse av frontend-utveckling och
             jag försöker hela tiden att lära mig nya tekniker för att kunna bli
             en bättre utvecklare. Kontakta mig gärna på LinkedIn om ni vill veta
-            eller kontakta mig här genom min kontaktsida. mera.
+            mera eller kontakta mig{" "}
+            <Link to="/contact">här från min kontaktsida</Link>.
           </p>
           <p>
             Hemsidan är fortfarande under uppbyggnad men jag uppdaterar den allt

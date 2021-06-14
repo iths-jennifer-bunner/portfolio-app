@@ -73,6 +73,14 @@ function ProjectComponent({ reference }) {
               Vue och Quasar Framework och jag har även översatt sidan till
               svenska med i18n.
             </p>
+            <div className="projects__buttons">
+              <a href="https://bocapital.se/">
+                <h5 className="projects__buttons--live">Till sidan</h5>
+              </a>
+              <a href="https://github.com/iths-jennifer-bunner/bo-homepage">
+                <h5 className="projects__buttons--repo">Till repot</h5>
+              </a>
+            </div>
           </div>
           <div className="projects">
             <div className="projects__imageContainer ">
@@ -120,6 +128,14 @@ function ProjectComponent({ reference }) {
               skapat eget Api för hamstrarna spm lagras i en databas i Firebase
               Firestore.
             </p>
+            <div className="projects__buttons">
+              <a href="http://fab-hamster-wars.herokuapp.com/">
+                <h5 className="projects__buttons--live">Till sidan</h5>
+              </a>
+              <a href="https://github.com/iths-jennifer-bunner/hamster-wars">
+                <h5 className="projects__buttons--repo">Till repot</h5>
+              </a>
+            </div>
           </div>
           <div className="projects">
             <div className="projects__imageContainer">
@@ -140,6 +156,14 @@ function ProjectComponent({ reference }) {
               Tanken var att skapa en hemsida åt mitt vän som jag tycker är en
               fantastisk konstnär. Den är skriven i Html, Css och Javascript
             </p>
+            <div className="projects__buttons">
+              <a href="https://iths-jennifer-bunner.github.io/iths-slutprojekt-javascript/index.html">
+                <h5 className="projects__buttons--live">Till sidan</h5>
+              </a>
+              <a href="https://github.com/iths-jennifer-bunner/iths-slutprojekt-javascript">
+                <h5 className="projects__buttons--repo">Till repot</h5>
+              </a>
+            </div>
           </div>
         </div>
       </div>

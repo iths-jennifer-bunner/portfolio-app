@@ -9,30 +9,23 @@
     z-index: 1;
   }
   &__imageContainer {
-    height: 16rem;
-    padding: 1rem 0;
+    height: 30rem;
+    // padding: 1rem 0;
     // width: 15rem;
   }
   &__image {
     height: 100%;
     max-width: 100%;
     object-fit: cover;
-    // border-radius: 15rem;
   }
 }
 .about__textField p {
   margin: 2rem 0;
 }
-@include md {
+@include xl {
   .about {
     &__container {
       flex-direction: row;
-
-      // justify-content: center;
-    }
-    &__imageContainer {
-      height: 30rem;
-      padding: 1rem 2rem;
     }
     &__textField {
       width: 70rem;

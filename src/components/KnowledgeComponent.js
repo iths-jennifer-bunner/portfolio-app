@@ -52,7 +52,7 @@ function KnowledgeComponent({ reference }) {
           vi vår egen design i Figma.
         </p>
       </div>
-      <div className="knowledge__iconsContainer">
+      {/* <div className="knowledge__iconsContainer">
         <i className="fab fa-js-square knowledge__icons"></i>
         <i className="fab fa-html5 knowledge__icons"></i>
         <i className="fab fa-css3-alt knowledge__icons"></i>
@@ -60,7 +60,7 @@ function KnowledgeComponent({ reference }) {
         <i className="fab fa-vuejs knowledge__icons"></i>
         <i className="fab fa-wordpress knowledge__icons"></i>
         <i className="fab fa-sass knowledge__icons"></i>
-      </div>
+      </div> */}
     </div>
   );
 }
